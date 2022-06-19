@@ -8,7 +8,7 @@ function getMaxDigit(num) {
   return Math.max.apply(null, maxDigit.split(''));
 }
 
-console.log(getMaxDigit(123322))
+console.log(getMaxDigit(123598.984))
 
 
 // 2. Створити функцію, яка визначає ступінь числа. 
@@ -120,20 +120,18 @@ console.log(string1);
 // 13. Створіть функцію, яка видалить з речення букви, які зустрічаються більше 1 разу. 
 
 
-  function deleteDuplicateLetter(word) {
-
-    let str = word.toLowerCase().split('').join('')
-    
-    for(let i = 0; i < word.length; i++) {
-      
-      if(countLetter(word[i], str) > 1) {
-        str = deleteLetters(word[i], str)
+function deleteDuplicateLetter(string) {
+  let str = string.toLowerCase().split('').join('')
+  for (let i = 0; i < string.length; i++) {
+      if (countLetter(string[i], str) > 1) {
+          str = deleteLetters(string[i], str)
+          }
       }
-    }
-      return str 
-    }
+  return str   
+}
 
   console.log(deleteDuplicateLetter('Бісквіт був дуже ніжний'))
+  
 
 
 
