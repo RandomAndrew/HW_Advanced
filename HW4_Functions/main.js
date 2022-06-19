@@ -8,7 +8,7 @@ function getMaxDigit(num) {
   return Math.max.apply(null, maxDigit.split(''));
 }
 
-console.log(getMaxDigit(123598.984))
+console.log(`Найбільша цифра серед числа: ${getMaxDigit(123598)}`)
 
 
 // 2. Створити функцію, яка визначає ступінь числа. 
@@ -21,14 +21,14 @@ function pow(a, b) {
     return result;
   }
 
-console.log(pow(-5,-10));
+console.log(`Ступінь числа: ${pow(-5,-10)}`);
 
 // 3. Створити функцію, яка форматує ім'я, роблячи першу букву великою.
 
 function toUpperFirst(string) { 
 	return string[0].toUpperCase() + string.substring(1).toLowerCase(); 
 } 
-console.log(toUpperFirst('aNDRIY'));
+console.log(`Форматуємо ім'я: ${toUpperFirst('aNDrIY')}`);
 
 // 4. Створити функцію, яка вираховує суму, що залишається після оплати податку від зарабітньої плати.
 
@@ -36,14 +36,14 @@ function sumWithoutTax(num, tax=18 + 1.5) {
     return num - (num / 100 * tax);
 }
 
-console.log(sumWithoutTax('9000'));
+console.log(`Сума яка залишається після оплати податку: ${sumWithoutTax('9000')}`);
 
 // 5. Створити функцію, яка повертає випадкове ціле число в діапазоні від N до M.
 
 function getRandomNumber(M, N) {
   return Math.floor(Math.random(M, N) * N);
 }
-console.log(getRandomNumber(1,10));
+console.log(`Випадкове ціле число від N до M: ${getRandomNumber(1,10)}`);
 
 // 6. Створити функцію, яка рахує скільки разів певна буква повторюється в слові. 
 
@@ -51,7 +51,7 @@ function countLetter(letter, word) {
   return (word.toLowerCase().match(RegExp(letter.toLowerCase(), "g"))||[]).length
 }
 
-console.log(`6. Кількість повторюваних літер: ${countLetter('а', 'Абабагаламага')}`)
+console.log(`Кількість повторюваних літер: ${countLetter('а', 'Абабагаламага')}`)
 
 // 7 - 8. Створіть функцію, яка конвертує долари в гривні та навпаки в залежності від наявності символа $ або UAH в рядку. 
 
@@ -66,9 +66,9 @@ function convertCurrency(money) {
   return 'Currency not found.Please use only UAH or USD'
 }
 
-console.log(`7-8.1. Конвертація доларів в гривні: ${convertCurrency('100 usd')}`)
-console.log(convertCurrency('3000 uah'));  
-console.log(convertCurrency('200 eur'));  
+console.log(`Конвертація доларів в гривні: ${convertCurrency('90 usd')}`);
+console.log(`Конвертація гривні в доллари: ${convertCurrency('2700 uah')}`);
+console.log(`Конвертація іншої валюти: ${convertCurrency('200 eur')}`);  
 
 // 9-10. Створіть функцію генерації випадкового паролю (тільки числа), довжина встановлюється користувачем або по замовчуванню = 8 символам.
 
@@ -83,7 +83,7 @@ function getRandomPassword(length = 8) {
 }
 getRandomPassword();
 
-console.log(getRandomPassword());
+console.log(`Згенерований пароль: ${getRandomPassword()}`);
 
 // 11. Створіть функцію, яка видаляє всі букви з речення. 
 
@@ -93,7 +93,7 @@ function deleteLetters(string, letter) {
   return string.replaceAll(letter, '')
 }
 
-console.log(`${deleteLetters('blablabla', 'a')}`);
+console.log(`Букви які залишились 1 метод: ${deleteLetters('blablabla', 'a')}`);
 
         //METHOD 2
 
@@ -101,7 +101,8 @@ let string = "we will we will rock you"
 
 let string1 = string.replaceAll("w", ""); 
 
-console.log(string1); 
+console.log(`Букви які залишились 2 метод: ${string1}`); 
+
 
 // 12. Створіть функцію, яка перевіряє, чи є слово паліндромом. 
 
@@ -111,9 +112,9 @@ console.log(string1);
     return str === str.split('').reverse().join('');
   }
 
-  console.log(isPalyndrom('Я несу гусеня'));
-  console.log(isPalyndrom('кокос'));
-  console.log(isPalyndrom('мадам'));
+  console.log(`Чи є слово паліндромом?: ${isPalyndrom('Я несу гусеня')}`);
+  console.log(`Чи є слово паліндромом?: ${isPalyndrom('кокос')}`);
+  console.log(`Чи є слово паліндромом?: ${isPalyndrom('мадам')}`);
 
 
 
@@ -130,7 +131,7 @@ function deleteDuplicateLetter(string) {
   return str   
 }
 
-  console.log(deleteDuplicateLetter('Бісквіт був дуже ніжний'))
+  console.log(`Букви які видаляються з речення: ${deleteDuplicateLetter('Бісквіт був дуже ніжний')}`);
   
 
 
