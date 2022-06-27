@@ -130,7 +130,7 @@ console.log(`11. Букви які залишились 2 метод: ${string1}
   for(let i = 0; i < string.length; i++) {
       let strIndex = string.lastIndexOf(string[i]);
       if(strIndex !== i) {
-          newArr = newArr.split('').filter(iteam => iteam !== string[i]).join('');
+          newArr = newArr.split('').filter(changes => changes !== string[i]).join('');
       }
   }
   return newArr;
