@@ -41,8 +41,7 @@ console.log(`4. Сума яка залишається після оплати �
 // 5. Створити функцію, яка повертає випадкове ціле число в діапазоні від N до M.
 
 function getRandomNumber(M, N) {
-  return Math.floor(Math.random(M, N) * N);
-  // return Math.floor(Math.random() * (N - M + 1) + M);
+  return Math.floor(Math.random() * (N - M + 1) + M);
 }
 console.log(`5. Випадкове ціле число від N до M: ${getRandomNumber(1, 10)}`);
 
