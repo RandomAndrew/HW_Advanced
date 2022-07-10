@@ -117,12 +117,68 @@ function replaceBadWords(string) {
 /*   9. Створіть функцію divideByThree(word), яка розбиває кожне слово на умовні склади по 3 букви. 
    Якщо букв менше трьох – не розбиває. Пробіли завжди видаляються. Рядок приводится до нижнього регістру.  */
 
-    function divideByThree(word) {
+   function divideByThree(word) {
 
-        const words1 = "Commander";
+    // Створюємо пустий масив
+    
+      const newWord = [];
+    
+      // Приводимо слово до нижнього регістру та розділяєм його пробілом " " 
+    
+      const arr = word.toLowerCase().split('');
+    
+        for (let i = 0; i < arr.length; i += 3 )  {
+    
+        // Пушимо в новий масив змінений рядок
+    
+          newWord.push(arr.slice(i, i+3).join(''))
+    
+        } 
+      return newWord;
+      }
+    
+    console.log(divideByThree("Commander"))
+    console.log(divideByThree("LIVE"))
 
+// 10. Створіть функцію generateCombinations(word), яка видасть всі можливі перестановки(унікальні, без повторень) букв в слові.
+
+
+        function generateCombinations(word)  {
+
+
+        // якщо введемо слово менше ніж 2 букви, то це поверне нам поточний рядок 
+        if (word.length < 2 ) {
+            return word
+        } 
         
+        // якщо буде введена цифра, то нас попросять ввести слово
+        if (typeof word !== "string") {
+        return "Будь ласка введіть слово"
+        }
+        
+        
+        // створюємо пустий масив 
+        let emptyArray = [] 
+        
+        // створюємо цикл для перебору всіх символів у рядку
+        for (let i = 0; i < word.length; i++){
+            
+            let currentStr = word[i];
+            
+            // спочатку ми розбиваємо наші символи від 0 до потомчного символу [i] і потім об'єднуємо [i] з наступним символом
+            let remainingStr = word.slice(0, i) + word.slice(i + 1, word.length)
+
+            for (let permutation of generateCombinations(remainingStr)){
+            emptyArray.push(currentStr + permutation) }
+        }
+        return emptyArray;
+        }
+
+    console.log(generateCombinations("man"))
+    console.log(generateCombinations("ol"))
 
 
 
-    }
+
+
+
