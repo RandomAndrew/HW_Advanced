@@ -16,10 +16,29 @@ console.log('Завдання 1:', getRandomArray(15, 1, 100))
 // 2. Створіть функцію getModa(...numbers) – яка вираховує моду всіх переданих в неї аргументів. НЕЦІЛІ ЧИСЛА ІГНОРУЮТЬСЯ! 
 
 function getModa(...numbers) {
+    
+  let arr = [], count = [], i, number, maxIndex = 0;
 
+  for (i = 0; i < numbers.length; i += 1) {
+      number = numbers[i];
+      count[number] = (count[number] || 0) + 1;
 
+        if (count[number] > maxIndex) {
+            maxIndex = count[number];
+        }
+  }
 
+  for (i in count)
+      if (count.hasOwnProperty(i)) {
+          if (count[i] === maxIndex) {
+              arr.push(Number(i));
+          }
+      }
+
+  return arr;
 }
+
+console.log('Завдання 2:', getModa(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2))
 
 
 // 3. Створіть функцію getAverage(...numbers) – яка рахує середнє арифметичне всіх переданих в неї аргументів. НЕЦІЛІ ЧИСЛА ІГНОРУЮТЬСЯ
@@ -46,7 +65,7 @@ function getAverage(...numbers) {
             return total / numbers.length;
        }
 
-       console.log(getAverage(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2));
+       console.log('Завдання 3:',getAverage(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2));
 
 // 4. Створіть функцію getMedian(...numbers) – яка рахує медіану всіх переданих в неї аргументів. НЕЦІЛІ ЧИСЛА ІГНОРУЮТЬСЯ
 
@@ -57,7 +76,7 @@ function getAverage(...numbers) {
             return arr.length % 2 !== 0 ? nums[mid] : (nums[mid - 1] + nums[mid]) / 2;
         };
 
-        console.log(getMedian([6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2]));
+        console.log('Завдання 4:',getMedian([6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2]));
    
 
 // 5. Створіть функцію filterEvenNumbers(...numbers) – яка фільтрує парні числа передані як аргументи функції
@@ -111,8 +130,8 @@ function replaceBadWords(string) {
     
     }
     
-    console.log(replaceBadWords("Are you fucking kidding?"));
-    console.log(replaceBadWords("It's bullshit!"));
+    console.log('Завдання 8:',replaceBadWords("Are you fucking kidding?"));
+    console.log('Завдання 8:',replaceBadWords("It's bullshit!"));
 
 /*   9. Створіть функцію divideByThree(word), яка розбиває кожне слово на умовні склади по 3 букви. 
    Якщо букв менше трьох – не розбиває. Пробіли завжди видаляються. Рядок приводится до нижнього регістру.  */
@@ -137,8 +156,8 @@ function replaceBadWords(string) {
       return newWord;
       }
     
-    console.log(divideByThree("Commander"))
-    console.log(divideByThree("LIVE"))
+    console.log('Завдання 9:',divideByThree("Commander"))
+    console.log('Завдання 9:',divideByThree("LIVE"))
 
 // 10. Створіть функцію generateCombinations(word), яка видасть всі можливі перестановки(унікальні, без повторень) букв в слові.
 
@@ -174,8 +193,8 @@ function replaceBadWords(string) {
         return emptyArray;
         }
 
-    console.log(generateCombinations("man"))
-    console.log(generateCombinations("ol"))
+    console.log('Завдання 10:',generateCombinations("man"))
+    console.log('Завдання 10:',generateCombinations("ol"))
 
 
 
