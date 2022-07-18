@@ -49,12 +49,13 @@ const litva = { tax: 0.15, middleSalary: 1509, vacancies: 1114 };
 
     //
     function getMySalary(country) {
-	
-  
+        
+        // за допомогою Math.floor(Math.random) генеруємо випадкове значення з діапазоном 1500-2000
         const salary = Math.floor(Math.random() * 500 + 1500)
         const taxes = Math.round(country.tax * salary)
         const profit = Math.round(salary - taxes)
         
+        // створюю об'єк в якому буде подано 3 значення 
         const objSulary = {
         
         salary: salary,
@@ -66,7 +67,7 @@ const litva = { tax: 0.15, middleSalary: 1509, vacancies: 1114 };
         console.log(objSulary)
         
      }
-     
+        //за допомогою методу setInterval вказуємо інтервал 10сек(10000) між показами в консолі
      console.log(setInterval(getMySalary, 10000, ukraine));
 
     
