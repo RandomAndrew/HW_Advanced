@@ -81,10 +81,11 @@ function getAverage(...numbers) {
 
 // 5. Створіть функцію filterEvenNumbers(...numbers) – яка фільтрує парні числа передані як аргументи функції
 
-let arr = [1, 2, 3, 4, 5, 6]; 
-let newArr = arr.filter (x => x % 2 !== 0);
+    function filterEvenNumbers(...numbers) {
+        return numbers.filter(i => i % 2 !== 0);
+      }
 
-console.log('Завдання 5:', newArr);
+      console.log(filterEvenNumbers('Завдання 5:', 1, 2, 3, 4, 5, 6));
 
 
 // 6. Створіть функцію countPositiveNumbers(...numbers) – яка порахує кількість чисел більших 0 
