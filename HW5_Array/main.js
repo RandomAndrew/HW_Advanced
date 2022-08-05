@@ -49,7 +49,7 @@ function getRating() {
 let ratingArr = [];
 
 	for (let i = 0; i < students.length; i++) {
-  ratingArr.push(students[i], marks[i]);
+  ratingArr.push([students[i], marks[i]]);
   }
 
 return ratingArr;
