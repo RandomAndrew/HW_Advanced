@@ -85,7 +85,7 @@ function getAverage(...numbers) {
         return numbers.filter(i => i % 2 !== 0);
       }
 
-      console.log(filterEvenNumbers('Завдання 5:', 1, 2, 3, 4, 5, 6));
+      console.log('Завдання 5:',filterEvenNumbers(1, 2, 3, 4, 5, 6));
 
 
 // 6. Створіть функцію countPositiveNumbers(...numbers) – яка порахує кількість чисел більших 0 
@@ -113,26 +113,27 @@ console.log('Завдання 7:', getDividedByFive(6, 2, 55, 11, 78, 2, 55, 77,
 
 function replaceBadWords(string) {
 
-    const badWords = ["fuck", "shit"]; 
+  const badWords = ["fuck", "shit"]; 
+  
+  //  пишу цикл в якому будемо проходитись по довжині стрінга 
+  for (let i = 0; i < badWords.length; i++ ) {
     
-    //  пишу цикл в якому будемо проходитись по довжині стрінга 
-    for (let i = 0; i < badWords.length; i++ ) {
-    
-      // За допомогою методу includes (true/false) визначаємо чи має string погані слова з badWords
-        while (string.includes(badWords[i])) { 
-    
-        // в тілі цикла while заміняємо погані слова на символ "*"
-          string = string.replace(badWords[i], "*".repeat(badWords[i].length))
-    
-          }
-      }
-    
-    return string;
-    
+    // За допомогою методу includes (true/false) визначаємо чи має string погані слова з badWords
+      while (string.includes(badWords[i])) { 
+  
+      // в тілі цикла while заміняємо погані слова на символ "*"
+        string = string.replace(badWords[i], "*".repeat(badWords[i].length))
+  
+        }
     }
-    
-    console.log('Завдання 8:',replaceBadWords("Are you fucking kidding?"));
-    console.log('Завдання 8:',replaceBadWords("It's bullshit!"));
+  
+  return string;
+  
+  }
+  
+  console.log('Завдання 8:',replaceBadWords("Are you fucking kidding?"));
+  console.log('Завдання 8:',replaceBadWords("It's bullshit!"));
+  console.log('Завдання 8:',replaceBadWords("Holy shit!"));
 
 /*   9. Створіть функцію divideByThree(word), яка розбиває кожне слово на умовні склади по 3 букви. 
    Якщо букв менше трьох – не розбиває. Пробіли завжди видаляються. Рядок приводится до нижнього регістру.  */
